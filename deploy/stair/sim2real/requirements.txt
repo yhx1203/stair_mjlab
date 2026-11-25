@@ -1,0 +1,4 @@
+# CPU runtime. Install hardware-specific SDKs separately; see README.md.
+numpy>=1.24,<3
+onnxruntime>=1.17,<2
+# Optional --show-depth: opencv-python>=4.8,<5

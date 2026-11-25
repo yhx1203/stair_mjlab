@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stair-mjlab"
+version = "0.1.0"
+description = "Unitree G1 Stair V19 ONNX deployment for sim2sim and sim2real"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24,<3",
+  "onnxruntime>=1.17,<2",
+]
+
+[project.optional-dependencies]
+sim2sim = ["numpy>=1.26,<3", "mujoco==3.5.0", "onnxruntime==1.27.0"]
+gamepad = ["pygame>=2.5,<3"]
+
+[tool.setuptools.packages.find]
+include = ["deploy", "deploy.*"]
+
+[tool.setuptools.package-data]
+"deploy.stair.sim2sim" = ["assets/*.xml", "requirements.txt"]
+"deploy.stair.sim2real" = ["*.json", "*.md", "requirements.txt"]
